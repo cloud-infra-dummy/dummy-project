@@ -3,8 +3,9 @@ node {
     checkout scm
   }
   stage('SonarQube Analysis') {
+    def mvn = tool 'Default Maven';
     withSonarQubeEnv() {
-      sh "./gradlew sonar"
+      sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=cloud-infra-cr_dummy-project_AYraKtXh3P4UYTctu11N -Dsonar.projectName='dummy-project'"
     }
   }
 }
