@@ -5,7 +5,7 @@ node {
   stage('SonarQube Analysis') {
     def mvn = tool 'maven';
     withSonarQubeEnv() {
-      sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=cloud-infra-dummy_dummy-project_AYruskg4rpQqqYUpD-oi -Dsonar.projectName='dummy-project'"
+      sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=cloud-infra-dummy_dummy-project_AYrz2PdsrjdzZSXV1rHX -Dsonar.projectName='dummy-project'"
     }
   }
 }
